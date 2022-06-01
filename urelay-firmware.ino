@@ -103,10 +103,6 @@ void loop() {
   btn.loop();
 
   if (pir.isChanged()) {
-    if (pir.isOn()) {
-      rly.setOn();
-    }
-
     mqtt.publish("urelay/switch3/getvalue", pir.isOn() ? "ON" : "OFF");
     Serial.println(pir.isOn() ? "pir is ON" : "pir is OFF");
   }
